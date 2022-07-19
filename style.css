@@ -1,38 +1,70 @@
+ 
+/* Default styles for the browser */
 *{
     margin: 0;
     padding: 0;
-    list-style:none;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: sans-serif;
+
+}
+.background_image {
+    background-image: url(https://images.unsplash.com/photo-1535005410886-12b3caf12112?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    height: 100vh;
+
+}
+nav {
+    background: black;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    color: white;
     text-decoration: none;
 }
-.header {
-    width: 100%;
-    height: 50px;
-    display:block;
-    background-color:black;
-    margin: auto;
+
+a:hover{
+    text-decoration: underline;
 }
 
-.logo_container{
-    height: 100%;
-    display: inline-block;
-    float: left;
-
+menu li a{
+    display :block;
 }
- 
-.logo_container h1{
-    color: green;
-    height: 100%;
-    font-size: 30px;
+
+.menu {
+    display: flex;
     
-
-    
+    align-items: center;   
 }
 
-.logo_container img {
-    width: 10%;
-   
+.button a{
+    padding:10px 15px;
+    background: teal;
+    border:1px solid #006d8d;
+    border-radius: 50em;
+}
 
+.button.secondary a{
+    background: transparent;
+}
+.logo{
+    margin-right: auto;
+    margin: 0% 1%;
+}
 
-
-
+.button.primary{
+    margin-left: auto;
+    margin-inline-end: 1%;
+}
+.button.secondary{
+    margin-inline-end: 1%;
 }
