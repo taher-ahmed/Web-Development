@@ -42,7 +42,6 @@ menu li a{
 
 .menu {
     display: flex;
-    
     align-items: center;   
 }
 
@@ -68,3 +67,94 @@ menu li a{
 .button.secondary{
     margin-inline-end: 1%;
 }
+
+.content-table {
+    border-collapse: collapse;
+    margin: 5px ;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.9em;
+    min-width: 700px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+  }
+  
+  .sen {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 40px ;
+  }
+  .content-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .content-table th,
+  .content-table td {
+    padding: 12px 15px;
+  }
+  
+  .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+
+
+
+  .footer-basic {
+    padding:40px 0;
+    background-color: black;
+    color:#4b4c4d;
+  }
+  
+  .footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+  }
+  
+  .list-inline{
+    display: flex;
+    
+    
+    margin-left: 40%;
+  }
+  .footer-basic li {
+    
+    padding:0 10px;
+  }
+  
+  .footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-basic ul a:hover {
+    opacity:1;
+  }
+  
+ 
+
+  .footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+  }
