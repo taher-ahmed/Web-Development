@@ -12,38 +12,36 @@
     <nav>
       <ul class="menu">
         <li class="logo"><a href="index.html"><img src="Main logo.png" alt="logo" width="210" height="60" /></a></li>
-        <li class="button primary"><a href="login.html">Log In</a></li>  
+        <li class="button primary"><a href="login.php">Log In</a></li>  
       </ul>
     </nav>
     <div class="container">
-      <form class="form" id="signup">
+      <form action="sign_up.inc.php" method="post" class="form" id="signup">
         <h1 class="form__title">Sign Up</h1>
         
         <div class="form__input-group">
-          <input type="text"  class="form__input"  autofocus placeholder="Username">
+          <input type="text"  class="form__input" name="uid" autofocus placeholder="Username">
           
         </div>
         <div class="form__input-group">
-          <input type="text"  class="form__input"  autofocus placeholder="Email Address">
+          <input type="text"  class="form__input" name="mail"  autofocus placeholder="Email Address">
           
         </div>
         <div class="form__input-group">
-          <input type="password"  class="form__input "  autofocus placeholder="Password">
+          <input type="password" name="pwd"  class="form__input "  autofocus placeholder="Password">
           
         </div>
         <div class="form__input-group">
-          <input type="password"  class="form__input "  autofocus placeholder="Confirm Password">
-          
+          <input type="password" name="pwd-repeat" class="form__input"  autofocus placeholder="Confirm Password">  
         </div>
         
         <a href="main.html">
-          <button class="form__button" type="submit"> Next</button>
+          <button class="form__button" name="signup-submit type="submit"> Next</button>
         </a>
         <div class="form__message form__message--error">hello my name is taher</div>
         <p  class="form__text">
-          <a href="login.html"  class="form__link">Already have an account? Login</a>
+          <a href="login.php"  class="form__link">Already have an account? Login</a>
         </p>
-
       </form>
     </div>
 

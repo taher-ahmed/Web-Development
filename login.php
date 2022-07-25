@@ -12,32 +12,32 @@
   <nav>
     <ul class="menu">
       <li class="logo"><a href="index.html"><img src="Main logo.png" alt="logo" width="210" height="60" /></a></li>
-      <li class="button primary"><a href="sign_up.html">Sign Up</a></li>  
+      <li class="button primary"><a href="sign_up.php">Sign Up</a></li>  
     </ul>
   </nav>
   <div class="container">
-    <form class="form" id="login">
+    <form action="login.inc.php" method="post" class="form" id="login">
       <h1 class="form__title">Login</h1>
       
       <div class="form__input-group">
-        <input type="text"  class="form__input"  autofocus placeholder="Username or email">
+        <input type="text" name="mailuid" class="form__input"  autofocus placeholder="Username or email">
       
       </div>
       <div class="form__input-group">
-        <input type="password"  class="form__input "  autofocus placeholder="Password">
+        <input type="password"  name="pwd" class="form__input "  autofocus placeholder="Password">
       </div>
       <div class="button-box">
         <div id="btn"></div>
         <a href="main.html">
-          <button class="form__button" type="submit"> Next</button>
+          <button class="form__button" type="submit" name="login-submit"> Next</button>
         </a>
       </div>
-      <div class="form__message form__message--error">vsddcsdf</div>
+      <div class="form__message form__message--error"></div>
       <p  class="form__text">
         <a href="#" class="form__link" id="forgot">Forgot your password?</a>
       </p>
       <p  class="form__text">
-        <a href="sign_up.html"  class="form__link">Don't have an account? Sing Up</a>
+        <a href="sign_up.php"  class="form__link">Don't have an account? Sing Up</a>
       </p>
     </form>
   </div>

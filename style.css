@@ -96,7 +96,7 @@ menu li a{
     margin-left: auto;
     margin-right: auto;
     font-size: 0.9em;
-    width: 40%;
+    width: 25%;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -183,7 +183,7 @@ menu li a{
   width: 400px;
   max-width: 400px;
   
-  margin: 10% auto ;
+  margin: 11% auto;
   padding: 2rem;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
   border-radius: var(--border-radius);
@@ -223,6 +223,7 @@ menu li a{
 
 .form__input-group {
   margin-bottom: 1rem;
+  
 }
 
 .form__input {
@@ -235,6 +236,7 @@ menu li a{
   outline: none;
   background: #eeeeee;
   transition: background 0.2s, border-color 0.2s;
+  
 }
 
 .form__input:focus {
