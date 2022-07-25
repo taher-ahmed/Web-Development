@@ -16,7 +16,7 @@
       </ul>
     </nav>
     <div class="container">
-      <form action="sign_up.inc.php" method="post" class="form" id="signup">
+      <form action="signup.inc.php" method="post" class="form" id="signup">
         <h1 class="form__title">Sign Up</h1>
         
         <div class="form__input-group">
@@ -35,9 +35,8 @@
           <input type="password" name="pwd-repeat" class="form__input"  autofocus placeholder="Confirm Password">  
         </div>
         
-        <a href="main.html">
-          <button class="form__button" name="signup-submit type="submit"> Next</button>
-        </a>
+        <button class="form__button" name="signup-submit" type="submit"> Next</button>
+       
         <div class="form__message form__message--error">hello my name is taher</div>
         <p  class="form__text">
           <a href="login.php"  class="form__link">Already have an account? Login</a>

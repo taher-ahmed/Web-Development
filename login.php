@@ -12,7 +12,7 @@
   <nav>
     <ul class="menu">
       <li class="logo"><a href="index.html"><img src="Main logo.png" alt="logo" width="210" height="60" /></a></li>
-      <li class="button primary"><a href="sign_up.php">Sign Up</a></li>  
+      <li class="button primary"><a href="signup.php">Sign Up</a></li>  
     </ul>
   </nav>
   <div class="container">
@@ -37,7 +37,7 @@
         <a href="#" class="form__link" id="forgot">Forgot your password?</a>
       </p>
       <p  class="form__text">
-        <a href="sign_up.php"  class="form__link">Don't have an account? Sing Up</a>
+        <a href="signup.php"  class="form__link">Don't have an account? Sing Up</a>
       </p>
     </form>
   </div>
