@@ -2,7 +2,17 @@
 
 <?php
 if (isset ($_POST['signup-submit'])) {
-  require 'dbh.inc.php';
+  // $servername="localhost";
+  // $dBUsername = "root";
+  // $dBPassword = "";
+  // $dBName="loginsystem";
+
+  // $conn = mysqli_conncect ('localhost', 'root', '', 'loginsystem')
+
+  // if (!$conn){
+  //   die("Connection failed:".mysqli_conncect_error());
+
+  // }
 
   // fetching all the information inputted in the signup form
   $username = $_POST['uid'];
@@ -66,6 +76,7 @@ if (isset ($_POST['signup-submit'])) {
     }
   }
   mysqli_stmt_close($stmt);
-  mysqli_close($conn)
+  mysqli_close($conn);
 }
+
 
