@@ -1,13 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-  <head>
-    <title>Type racer</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-  </head>
-<body>
-  <h1>siuuu</h1>
-</body>
-</html>
+if (isset($_POST['login-submit'])){
+  require 'dbh.inc.php';
+
+  $mailuid = $_POST['mailuid'];
+  $password = $_POST['pwd'];
+
+  if (empty($mailuid) || empty($password)){
+    header("Location:  login.php?error=emptyfields");
+
+  }
+  else{
+    $sql ="SELECT * FROM users WHERE uidUsers=?  OR emailUsers=?;";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+      header( "Location: login.php?error=sqlerror");
+      exit();
+    }
+    else{
+
+      mysqli_stmt_bind_param($stmt, "ss", $mailuid, $mailuid);
+      mysqli_stmt_execute($stmt);
+      
+      $result = mysqli_stmt_get_result($stmt);
+      if ($row =mysqli_fetch_assoc($result)){
+        $pwdCheck = password_verify($password, $row['pwdUsers']);
+        if ($pwdCheck == false){
+          header("Location: login.php?error=wrongpwd");
+          exit();
+        }
+        else if ($pwdCheck ==true) {
+            session_start();
+            $_SESSION['userId'] = $row['idUsers'];
+            $_SESSTION['userUid'] = $row['uidUsers'];
+            header("Location: main.html");
+
+        }
+        else{
+          header("Location: login.php?error=wrongpwd");
+          exit();
+        }
+
+      } 
+    }
+  }
+}
+
+else{
+  header("Location: login.php");
+}

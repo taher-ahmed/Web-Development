@@ -1,19 +1,9 @@
 
 <?php
 if (isset ($_POST['signup-submit'])) {
-  // $servername="localhost";
-  // $dBUsername = "root";
-  // $dBPassword = "";
-  // $dBName="loginsystem";
+ 
 
-  // $conn = mysqli_conncect ('localhost', 'root', '', 'loginsystem');
-
-  // if (!$conn){
-  //   die("Connection failed:".mysqli_conncect_error());
-
-  // }
-
-  // require 'dbh.inc.php';
+  require 'dbh.inc.php';
 
   // fetching all the information inputted in the signup form
   $username = $_POST['uid'];
@@ -43,22 +33,16 @@ if (isset ($_POST['signup-submit'])) {
     exit();
   }
   else{
-    $servername="localhost";
-    $dBUsername = "root";
-    $dBPassword = "";
-    $dBName="loginsystem";
-
-    $conn = mysqli_conncect ('localhost', 'root', '', 'loginsystem');
-
-    if (!$conn){
-      die("Connection failed:".mysqli_conncect_error());
-
-    }
-
-  // require 'dbh.inc.php';
+    
     $sql= "SELECT uidUsers FROM users WHERE uidUsers=?";
+    $sqli= "SELECT emailUsers FROM users WHERE emailUsers=?";
+    $stmti= mysqli_stmt_init($conn);
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)){
+      header( "Location: signup.php?error=sqlerror");
+      exit();
+    }
+    else if (!mysqli_stmt_prepare($stmti, $sqli)){
       header( "Location: signup.php?error=sqlerror");
       exit();
     }
@@ -67,10 +51,21 @@ if (isset ($_POST['signup-submit'])) {
       mysqli_stmt_execute($stmt);
       mysqli_stmt_store_result($stmt);
       $resultCheck = mysqli_stmt_num_rows($stmt);
+
+      mysqli_stmt_bind_param($stmti, "s", $email);
+      mysqli_stmt_execute($stmti);
+      mysqli_stmt_store_result($stmti);
+      $resultCheck1= mysqli_stmt_num_rows($stmti);
+
+
       if ($resultCheck >0){
         header("Location: signup.php?error=usertakenmail&mail=".$email);
         exit();
       }
+      else if ($resultCheck1>0){
+        header("Location: signup.php?error=alreadyhaveanaccount&uid=".$username);
+      }
+
       else {
         $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers) VALUE (?, ?, ?)";
         if (!mysqli_stmt_prepare($stmt, $sql)){
@@ -82,7 +77,7 @@ if (isset ($_POST['signup-submit'])) {
           mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
           mysqli_stmt_execute($stmt);
           mysqli_stmt_store_result($stmt);
-          header("Location: main.php");
+          header("Location: main.html");
           exit();
 
         }
@@ -90,7 +85,10 @@ if (isset ($_POST['signup-submit'])) {
     }
   }
   mysqli_stmt_close($stmt);
+  mysqli_stmt_close($stmti);
   mysqli_close($conn);
 }
-
+else{
+  header("Location: signup.php");
+}
 
