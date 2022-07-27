@@ -1,5 +1,4 @@
 
-
 <?php
 if (isset ($_POST['signup-submit'])) {
   // $servername="localhost";
@@ -7,12 +6,14 @@ if (isset ($_POST['signup-submit'])) {
   // $dBPassword = "";
   // $dBName="loginsystem";
 
-  // $conn = mysqli_conncect ('localhost', 'root', '', 'loginsystem')
+  // $conn = mysqli_conncect ('localhost', 'root', '', 'loginsystem');
 
   // if (!$conn){
   //   die("Connection failed:".mysqli_conncect_error());
 
   // }
+
+  // require 'dbh.inc.php';
 
   // fetching all the information inputted in the signup form
   $username = $_POST['uid'];
@@ -42,6 +43,19 @@ if (isset ($_POST['signup-submit'])) {
     exit();
   }
   else{
+    $servername="localhost";
+    $dBUsername = "root";
+    $dBPassword = "";
+    $dBName="loginsystem";
+
+    $conn = mysqli_conncect ('localhost', 'root', '', 'loginsystem');
+
+    if (!$conn){
+      die("Connection failed:".mysqli_conncect_error());
+
+    }
+
+  // require 'dbh.inc.php';
     $sql= "SELECT uidUsers FROM users WHERE uidUsers=?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)){
