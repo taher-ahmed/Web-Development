@@ -36,14 +36,26 @@
         </div>
         
         <button class="form__button" name="signup-submit" type="submit"> Next</button>
-       
-        <div class="form__message form__message--error">hello my name is taher</div>
-        <p  class="form__text">
-          <a href="login.php"  class="form__link">Already have an account? Login</a>
+
+        <?php
+          if (isset($_GET['error'])){
+            if ($_GET['error'] == "emptyfields"){
+              echo '<p class="form__message form__message--error">All fields required!</p>';
+              
+            }
+            else if ($_GET['error'] == "invalidmail&uid");
+              echo '<p class="form__message form__message--error">Invalid username or email!</p>';
+              
+          }
+
+        ?>
+        <!-- <p class="form__message form__message--error">hello my name is </p> -->
+        <p  class="form__text1">
+          <a href="login.php"  class="form__link"  id="link">Already have an account? Login</a>
         </p>
       </form>
     </div>
-
+    
 
   </body>
 </html>

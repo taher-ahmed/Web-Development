@@ -32,16 +32,16 @@ if (isset($_POST['login-submit'])){
         else if ($pwdCheck ==true) {
             session_start();
             $_SESSION['userId'] = $row['idUsers'];
-            $_SESSTION['userUid'] = $row['uidUsers'];
+            $_SESSION['userUid'] = $row['uidUsers'];
             header("Location: main.html");
-
         }
-        else{
-          header("Location: login.php?error=wrongpwd");
+      }
+      else{
+          header("Location: login.php?error=nouser");
           exit();
-        }
+      }
 
-      } 
+      
     }
   }
 }

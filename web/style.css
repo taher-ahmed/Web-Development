@@ -213,8 +213,8 @@ menu li a{
 
 .form__message {
   text-align: center;
-  padding-top: 15px;
-  margin-bottom: 1rem;
+  padding-top: 10px;
+  margin-bottom: 0.8rem;
 }
 
 .form__message--error {
@@ -278,14 +278,18 @@ menu li a{
 }
 
 .form__text {
+  text-align: center; 
+  padding: 4px;
+}
+.form__text1{
   text-align: center;
   padding-top: 10px;
 }
-
 .form__link {
   color: var(--color-secondary);
   text-decoration: none;
   cursor: pointer;
+  
 }
 
 .form__link:hover {

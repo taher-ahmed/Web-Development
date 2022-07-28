@@ -38,7 +38,7 @@
           <button class="form__button" type="submit" name="login-submit"> Next</button>
         </a>
       </div>
-      <div class="form__message form__message--error"></div>
+      <div class="form__message form__message--error">siuuu</div>
       <p  class="form__text">
         <a href="#" class="form__link" id="forgot">Forgot your password?</a>
       </p>
@@ -49,7 +49,3 @@
   </div>
 </body>
 </html>
-
-<?php
-  sesstion_start();
-?>
